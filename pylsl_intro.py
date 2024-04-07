@@ -52,11 +52,11 @@ def main():
 
         if print_sample:
             print("Timestame %.3f \t num_sample=%d" %(timestamp, len(sample)))
-        if msvcrt.kbhit() and msvcrt.getch()[0] == 27:
+        if msvcrt.kbhit() and msvcrt.getch()[0] == 27: #esc
             aborted = True
-        if msvcrt.kbhit() and msvcrt.getch()[0] == 112:
+        if msvcrt.kbhit() and msvcrt.getch()[0] == 112: #p
             print_sample = not print_sample
-        if (msvcrt.kbhit() and msvcrt.getch()[0] == 115) or i==stream_timestamp:
+        if (msvcrt.kbhit() and msvcrt.getch()[0] == 115) or i==stream_timestamp: #i
             print('Start Signal Registration')
             file_name = os.path.join(path_dir, 'sig_'+datetime.datetime.now().strftime("%d_%m_%Y__%H_%M_%S")+'.txt')
             t = time.time()
